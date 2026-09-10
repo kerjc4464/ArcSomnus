@@ -7,11 +7,20 @@ DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "somnus.db")
 SOULS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "souls")
 
 
+def soul_files():
+    """souls 目录下真正的角色卡：只认 .json，点文件/说明文件一律跳过。"""
+    try:
+        return sorted(f for f in os.listdir(SOULS_DIR)
+                      if f.endswith(".json") and not f.startswith(".")
+                      and os.path.isfile(os.path.join(SOULS_DIR, f)))
+    except Exception:
+        return []
+
+
 def load_soul(soul_id):
     """读魂：精确→前缀→包含，和 ViGil 同思路的轻量版。"""
     try:
-        files = [f for f in os.listdir(SOULS_DIR)
-                 if os.path.isfile(os.path.join(SOULS_DIR, f))]
+        files = soul_files()
     except Exception:
         return ""
     for f in files:
@@ -25,8 +34,7 @@ def load_soul(soul_id):
 
 def soul_ids():
     try:
-        return sorted(os.path.splitext(f)[0] for f in os.listdir(SOULS_DIR)
-                      if os.path.isfile(os.path.join(SOULS_DIR, f)))
+        return sorted(os.path.splitext(f)[0] for f in soul_files())
     except Exception:
         return []
 

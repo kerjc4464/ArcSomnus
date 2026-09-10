@@ -225,8 +225,7 @@ async def souls():
 
 def _soul_files():
     try:
-        return sorted(f for f in os.listdir(SOULS_DIR)
-                      if os.path.isfile(os.path.join(SOULS_DIR, f)))
+        return store.soul_files()
     except Exception:
         return []
 
