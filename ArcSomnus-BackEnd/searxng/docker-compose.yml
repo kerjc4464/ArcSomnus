@@ -1,0 +1,9 @@
+services:
+  searxng:
+    image: searxng/searxng:latest
+    container_name: arcsomnus-searxng
+    restart: unless-stopped
+    ports:
+      - "${SEARXNG_PORT:-9004}:8080"
+    volumes:
+      - ./settings.yml:/etc/searxng/settings.yml:ro

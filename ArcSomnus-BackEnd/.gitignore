@@ -1,0 +1,5 @@
+somnus.db*
+__pycache__/
+*.pyc
+souls/*.json
+souls/*.tmp

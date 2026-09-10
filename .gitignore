@@ -1,0 +1,6 @@
+ArcSomnus-BackEnd/somnus.db*
+ArcSomnus-BackEnd/__pycache__/
+**/__pycache__/
+*.pyc
+*.db
+*.db-*

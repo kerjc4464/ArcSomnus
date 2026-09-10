@@ -1,0 +1,14 @@
+use_default_settings: true
+server:
+  secret_key: "changeme-somnus-local-secret-key"
+  limiter: false
+  public_instance: false
+  http_protocol_version: "1.1"
+search:
+  formats:
+    - html
+    - json
+botdetection:
+  ip_limit:
+    filter_link_local: false
+    link_token: false

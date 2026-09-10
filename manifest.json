@@ -1,0 +1,11 @@
+{
+    "display_name": "ArcSomnus",
+    "js": "index.js",
+    "css": "style.css",
+    "description": "Offline Agent hub: dresser, diary, letters. Each soul lives on while you are away.",
+    "author": "Reality",
+    "version": "0.1.0",
+    "homePage": "",
+    "requires": [],
+    "optional": []
+}
